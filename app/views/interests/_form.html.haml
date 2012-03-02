@@ -1,0 +1,23 @@
+= simple_form_for @interest do |f|
+  -if @interest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@interest.errors.count, "error")} prohibited this interest from being saved:"
+      %ul
+        - @interest.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.hidden_field :user_id, value: current_user.id
+  .field
+    = f.label :activity_name
+    = f.text_field :activity_name, data: {autocomplete_source: Activity.order(:name).map(&:name)}
+  .field
+    = f.label :notes
+    = f.text_field :notes
+  .field
+    = f.label :wants_to_mentor
+    = f.check_box :wants_to_mentor
+  .field
+    = f.label :wants_to_be_mentored
+    = f.check_box :wants_to_be_mentored
+  .actions
+    = f.submit 'Save'

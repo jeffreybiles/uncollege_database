@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  activity_id: 1
+  notes: MyString
+  wants_to_mentor: false
+  wants_to_be_mentored: false
+
+two:
+  user_id: 1
+  activity_id: 1
+  notes: MyString
+  wants_to_mentor: false
+  wants_to_be_mentored: false

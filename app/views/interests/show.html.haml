@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @interest.user_id
+%p
+  %b Activity:
+  = @interest.activity_id
+%p
+  %b Notes:
+  = @interest.notes
+%p
+  %b Wants to mentor:
+  = @interest.wants_to_mentor
+%p
+  %b Wants to be mentored:
+  = @interest.wants_to_be_mentored
+
+= link_to 'Edit', edit_interest_path(@interest)
+\|
+= link_to 'Back', interests_path

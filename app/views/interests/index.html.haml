@@ -1,0 +1,27 @@
+%h1 Listing interests
+
+%table
+  %tr
+    %th User
+    %th Activity
+    %th Notes
+    %th Wants to mentor
+    %th Wants to be mentored
+    %th
+    %th
+    %th
+
+  - @interests.each do |interest|
+    %tr
+      %td= interest.user_id
+      %td= interest.activity_id
+      %td= interest.notes
+      %td= interest.wants_to_mentor
+      %td= interest.wants_to_be_mentored
+      %td= link_to 'Show', interest
+      %td= link_to 'Edit', edit_interest_path(interest)
+      %td= link_to 'Destroy', interest, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Interest', new_interest_path
