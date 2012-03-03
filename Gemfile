@@ -6,7 +6,6 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'json'
-gem 'sqlite3'
 gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
@@ -17,6 +16,14 @@ gem 'make_resourceful'
 gem 'meta_search'
 
 
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
