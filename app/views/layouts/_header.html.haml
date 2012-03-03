@@ -1,7 +1,7 @@
 -if current_user
   = link_to "users", users_path
   = link_to "activities", activities_path
-  = link_to "interests", interests_path
+  = link_to "Add your interest!", new_interest_path
   = link_to "sign out", "/signout"
 -else
   = link_to "Sign in", new_user_session_path

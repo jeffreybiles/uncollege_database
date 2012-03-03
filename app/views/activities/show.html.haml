@@ -6,24 +6,19 @@
 Mentors:
 - @activity.interests.where(wants_to_mentor: true).each do |interest, user = interest.user|
   %br
-  = link_to user.name, user_path(user.id)
+  = link_to user.name, interest_path(interest.id)
   = user.email
 
 %br
 Mentees:
 - @activity.interests.where(wants_to_be_mentored: true).each do |interest, user = interest.user|
   %br
-  = link_to user.name, user_path(user.id)
+  = link_to user.name, interest_path(interest.id)
   = user.email
 
 %br
 All interested:
 - @activity.interests.each do |interest, user = interest.user|
   %br
-  = link_to user.name, user_path(user.id)
+  = link_to user.name, interest_path(interest.id)
   = user.email
-%br
-
-= link_to 'Edit', edit_activity_path(@activity)
-\|
-= link_to 'Back', activities_path
