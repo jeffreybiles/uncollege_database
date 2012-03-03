@@ -13,16 +13,10 @@
     %th Interested                
     %th Mentors
     %th Mentees
-    %th
-    %th
-    %th
 
   - @activities.each do |activity|
     %tr
-      %td= activity.name
+      %td= link_to activity.name, activity
       %td= activity.interests.count
       %td= activity.interests.where(wants_to_mentor: true).count
       %td= activity.interests.where(wants_to_be_mentored: true).count
-      %td= link_to 'Show', activity
-      %td= link_to 'Edit', edit_activity_path(activity)
-      %td= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
