@@ -1,8 +1,28 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = @activity.name
+  %b= @activity.name
+
+Mentors:
+- @activity.interests.where(wants_to_mentor: true).each do |interest, user = interest.user|
+  %br
+  = link_to user.name, user_path(user.id)
+  = user.email
+
+%br
+Mentees:
+- @activity.interests.where(wants_to_be_mentored: true).each do |interest, user = interest.user|
+  %br
+  = link_to user.name, user_path(user.id)
+  = user.email
+
+%br
+All interested:
+- @activity.interests.each do |interest, user = interest.user|
+  %br
+  = link_to user.name, user_path(user.id)
+  = user.email
+%br
 
 = link_to 'Edit', edit_activity_path(@activity)
 \|

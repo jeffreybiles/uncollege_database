@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'authlogic'
 gem 'simple_form'
 gem 'make_resourceful'
+gem 'meta_search'
 
 
 

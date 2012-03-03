@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
     #Add more options here if needed
   end
 
-
   has_many :interests
   accepts_nested_attributes_for :interests, allow_destroy: true
   has_many :activities, through: :interests

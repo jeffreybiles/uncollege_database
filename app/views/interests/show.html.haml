@@ -2,19 +2,20 @@
 
 %p
   %b User:
-  = @interest.user_id
+  = link_to @interest.user.name, user_path(@interest.user_id)
+
 %p
   %b Activity:
-  = @interest.activity_id
+  = link_to @interest.activity.name, activity_path(@interest.activity_id)
 %p
   %b Notes:
   = @interest.notes
-%p
-  %b Wants to mentor:
-  = @interest.wants_to_mentor
-%p
-  %b Wants to be mentored:
-  = @interest.wants_to_be_mentored
+-if @interest.wants_to_mentor
+  %p
+    %b Wants to mentor
+-if @interest.wants_to_be_mentored
+  %p
+    %b Wants to be mentored
 
 = link_to 'Edit', edit_interest_path(@interest)
 \|

@@ -16,6 +16,13 @@
   %b Job:
   = @user.job
 
+Activities:
+%br
+-@user.interests.each do |interest, activity = interest.activity|
+  = link_to activity.name, interest_path(interest.id)
+  = "Mentor!" if interest.wants_to_mentor
+  = "Mentee" if interest.wants_to_be_mentored
+  %br
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path

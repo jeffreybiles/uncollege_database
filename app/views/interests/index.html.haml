@@ -5,16 +5,16 @@
     %th User
     %th Activity
     %th Notes
-    %th Wants to mentor
-    %th Wants to be mentored
+    %th Mentor?
+    %th Mentee?
     %th
     %th
     %th
 
   - @interests.each do |interest|
     %tr
-      %td= interest.user_id
-      %td= interest.activity_id
+      %td= link_to interest.user.name, user_path(interest.user_id)
+      %td= link_to interest.activity.name, activity_path(interest.activity_id)
       %td= interest.notes
       %td= interest.wants_to_mentor
       %td= interest.wants_to_be_mentored
