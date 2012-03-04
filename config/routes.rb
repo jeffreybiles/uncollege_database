@@ -8,7 +8,8 @@ UncollegeDatabase::Application.routes.draw do
   resources :user_sessions
 
   resources :users
-  match '/signout', to: 'user_sessions#destroy'
+
+  #match '/signout', to: 'user_sessions#destroy'
 
   root to: 'users#splash'
   # The priority is based upon order of creation:

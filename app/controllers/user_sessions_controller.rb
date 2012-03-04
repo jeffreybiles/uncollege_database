@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class User::SessionsController < Devise::SessionsController
   load_and_authorize_resource
 
   make_resourceful do
