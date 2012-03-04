@@ -1,4 +1,5 @@
-class ActivitiesController < ApplicationController
+class ActivitiesController < AuthorizedController
+  load_and_authorize_resource
 
   make_resourceful do
     actions :new, :create, :update, :edit, :destroy, :show

@@ -15,8 +15,9 @@
     %th Mentees
 
   - @activities.each do |activity|
-    %tr
-      %td= link_to activity.name, activity
-      %td= activity.interests.count
-      %td= activity.interests.where(wants_to_mentor: true).count
-      %td= activity.interests.where(wants_to_be_mentored: true).count
+    -if activity.interests.count > 0
+      %tr
+        %td= link_to activity.name, activity
+        %td= activity.interests.count
+        %td= activity.interests.where(wants_to_mentor: true).count
+        %td= activity.interests.where(wants_to_be_mentored: true).count

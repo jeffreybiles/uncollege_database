@@ -10,12 +10,11 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
-#gem 'authlogic'
 gem 'simple_form'
 gem 'make_resourceful'
 gem 'meta_search'
 gem 'devise'
-
+gem 'cancan'
 
 group :production do
   gem 'pg'

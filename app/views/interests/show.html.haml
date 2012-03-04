@@ -8,8 +8,11 @@
   %b Activity:
   = link_to @interest.activity.name, activity_path(@interest.activity_id)
 %p
-  %b Notes:
-  = @interest.notes
+  -if @interest.notes.length > 1
+    %b Notes:
+    = @interest.notes
+  -else
+    There are no notes on this user's interest.
 -if @interest.wants_to_mentor
   %p
     %b Wants to mentor
@@ -17,4 +20,6 @@
   %p
     %b Wants to be mentored
 
-= link_to 'Edit', edit_interest_path(@interest)
+= link_to 'Edit', edit_interest_path(@interest) if can? :update, @interest
+
+= link_to 'Destroy', @interest, confirm: 'Are you sure?', method: :delete if can? :delete, @interest

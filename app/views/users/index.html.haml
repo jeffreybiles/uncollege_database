@@ -7,19 +7,15 @@
     %th City
     %th College
     %th Job
-    %th
-    %th
-    %th
 
   - @users.each do |user|
     %tr
-      %td= user.name
+      %td= link_to user.name, user
       %td= user.email
       %td= user.city
       %td= user.college
       %td= user.job
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Edit', edit_user_path(user) if can? :update, user
+      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete if can? :delete, user
 
 %br

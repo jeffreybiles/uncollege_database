@@ -1,22 +1,8 @@
 class Users::SessionsController < Devise::SessionsController
-  def new
-    @user_session = UserSession.new
+  load_and_authorize_resource
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user_session }
-    end
-  end
-
-  def create
-
-    @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
-      redirect_to "/users"
-    else
-      flash[:notice] = "There were some troubles.  Try again."
-      render :new
-    end
+  make_resourceful do
+    actions :new, :create
   end
 
   def destroy
