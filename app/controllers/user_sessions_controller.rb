@@ -5,9 +5,10 @@ class User::SessionsController < Devise::SessionsController
     actions :new, :create
   end
 
+  #this isn't called!
   def destroy
     user_session.destroy
-    redirect_to new_user_session_path
+    redirect_to registrations_path
   end
 
 end

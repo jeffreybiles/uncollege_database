@@ -15,6 +15,8 @@ gem 'make_resourceful'
 gem 'meta_search'
 gem 'devise'
 gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :production do
   gem 'pg'

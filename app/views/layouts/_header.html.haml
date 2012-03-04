@@ -3,10 +3,10 @@
   = link_to "interests", activities_path
   = link_to "Add your interest!", new_interest_path
   Signed in as
-  = current_user.email
+  = link_to current_user.name, current_user
   = ". Not you?"
   = link_to "Sign out", destroy_user_session_path, :method => :delete
 -else
   = link_to "Sign up", new_user_registration_path
   or
-  = link_to "sign in", new_user_session_path
+  = link_to "sign in", authentications_path

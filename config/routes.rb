@@ -1,5 +1,7 @@
 UncollegeDatabase::Application.routes.draw do
-  devise_for :users
+  resources :authentications
+
+  devise_for :users, :controllers => {:registrations => 'registrations'}
 
   resources :activities
 
@@ -9,7 +11,8 @@ UncollegeDatabase::Application.routes.draw do
 
   resources :users
 
-  #match '/signout', to: 'user_sessions#destroy'
+  match '/users/sign_in', to: 'authentications#new'
+  match '/auth/:provider/callback' => 'authentications#create'
 
   root to: 'users#splash'
   # The priority is based upon order of creation:
