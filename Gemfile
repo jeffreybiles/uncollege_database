@@ -10,10 +10,11 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
-gem 'authlogic'
+#gem 'authlogic'
 gem 'simple_form'
 gem 'make_resourceful'
 gem 'meta_search'
+gem 'devise'
 
 
 group :production do

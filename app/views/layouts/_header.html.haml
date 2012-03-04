@@ -1,8 +1,12 @@
--if current_user
+-if user_signed_in?
   = link_to "users", users_path
   = link_to "interests", activities_path
   = link_to "Add your interest!", new_interest_path
-  = link_to "sign out", "/signout"
+  Signed in as
+  = current_user.email
+  = ". Not you?"
+  = link_to "Sign out", destroy_user_session_path, :method => :delete
 -else
-  = link_to "Sign in", new_user_session_path
-  = link_to "Make an account", new_user_path
+  = link_to "Sign up", new_user_registration_path
+  or
+  = link_to "sign in", new_user_session_path

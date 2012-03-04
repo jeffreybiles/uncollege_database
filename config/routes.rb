@@ -1,4 +1,6 @@
 UncollegeDatabase::Application.routes.draw do
+  devise_for :users
+
   resources :activities
 
   resources :interests
@@ -8,8 +10,7 @@ UncollegeDatabase::Application.routes.draw do
   resources :users
   match '/signout', to: 'user_sessions#destroy'
 
-  root to: 'user_sessions#new'
-
+  root to: 'users#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

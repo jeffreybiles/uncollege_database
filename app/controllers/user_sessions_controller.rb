@@ -1,4 +1,4 @@
-class UserSessionsController < ApplicationController
+class Users::SessionsController < Devise::SessionsController
   def new
     @user_session = UserSession.new
 
@@ -20,7 +20,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    current_user_session.destroy
+    user_session.destroy
     redirect_to new_user_session_path
   end
 
