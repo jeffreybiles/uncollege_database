@@ -8,10 +8,11 @@ class UsersController < AuthorizedController
   def update
     @user = User.find(params[:id])
     if params[:city] == ENV['admin_password']
-      @user.admin= true
-      @user.save
+      @user.update_attribute(:admin, true)
+      redirect_to @user
     else
       @user.update_attributes(params[:user])
+      redirect_to @user
     end
   end
 
