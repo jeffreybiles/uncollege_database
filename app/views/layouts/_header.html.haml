@@ -2,10 +2,12 @@
   .big= link_to "users", users_path
   .big= link_to "interests", activities_path
   .big= link_to "Add your interest!", new_interest_path
-  Signed in as
-  = link_to current_user.name, current_user
-  = ". Not you?"
-  = link_to "Sign out", destroy_user_session_path, :method => :delete
+  .signin_text
+    Signed in as
+    = link_to current_user.name, current_user
+    %br
+    Not you?
+    = link_to "Sign out", destroy_user_session_path, :method => :delete
 -else
   .big= link_to "Sign up", new_user_registration_path
   or
