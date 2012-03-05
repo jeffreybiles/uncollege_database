@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
   has_many :authentications
 
   def apply_omniauth(omniauth)
-    self.email = omniauth['user_info']['email'] if email.blank?
+    self.email = omniauth['info']['email'] unless email
+    self.name = omniauth['info']['name'] unless name
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
 
