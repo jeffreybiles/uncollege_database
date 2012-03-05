@@ -35,37 +35,37 @@ ul.ui-autocomplete {
   -webkit-border-radius: 8px;
   position: relative;
   margin-right: 10px;
-}
 
-.authentication .remove {
-  text-decoration: none;
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  color: #333;
-  padding: 2px 4px;
-  font-size: 10px;
-}
+  .remove {
+    text-decoration: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: #333;
+    padding: 2px 4px;
+    font-size: 10px;
+  }
 
-.authentication .remove:hover {
-  color: #CCC;
-  background-color: #777;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-}
+  .remove:hover {
+    color: #CCC;
+    background-color: #777;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+  }
 
-.authentication img {
-  float: left;
-  margin-right: 10px;
-}
+  img {
+    float: left;
+    margin-right: 10px;
+  }
 
-.authentication .provider {
-  font-weight: bold;
-}
+  .provider {
+    font-weight: bold;
+  }
 
-.authentication .uid {
-  color: #666;
-  font-size: 11px;
+  .uid {
+    color: #666;
+    font-size: 11px;
+  }
 }
 
 .auth_provider img {
@@ -82,4 +82,8 @@ ul.ui-autocomplete {
 
 .clear {
   clear: both;
+}
+
+.big {
+  font-size: 130%;
 }
