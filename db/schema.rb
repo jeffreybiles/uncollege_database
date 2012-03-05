@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304183407) do
+ActiveRecord::Schema.define(:version => 20120305014133) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(:version => 20120304183407) do
   create_table "interests", :force => true do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
-    t.string   "notes"
     t.boolean  "wants_to_mentor"
     t.boolean  "wants_to_be_mentored"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.text     "notes"
   end
 
   create_table "sessions", :force => true do |t|

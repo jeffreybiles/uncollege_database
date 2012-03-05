@@ -10,14 +10,7 @@
   .field
     = f.label :activity_name
     = f.text_field :activity_name, data: {autocomplete_source: Activity.order(:name).map(&:name)}
-  .field
-    = f.label :notes
-    = f.text_field :notes
-  .field
-    = f.label :wants_to_mentor
-    = f.check_box :wants_to_mentor
-  .field
-    = f.label :wants_to_be_mentored
-    = f.check_box :wants_to_be_mentored
-  .actions
-    = f.submit 'Save'
+  .field= f.input :notes, :input_html => { :cols => 50, :rows => 10 }
+  .field= f.input :wants_to_mentor
+  .field= f.input :wants_to_be_mentored
+  .actions= f.submit 'Save'
