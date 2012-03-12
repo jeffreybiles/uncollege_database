@@ -21,7 +21,7 @@ class Ability
          can :manage, Interest do |this_interest|
            this_interest.user_id == user.id
          end
-
+         can [:create, :index, :show, :popular], Activity
 
        end
     #

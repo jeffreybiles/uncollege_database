@@ -9,4 +9,10 @@ class ActivitiesController < AuthorizedController
     @search = Activity.search(params[:search])
     @activities = @search.all
   end
+
+  def popular
+    @search = Activity.search(params[:search])
+    @activities = @search.all(order: 'interests_count DESC')
+    render 'activities/index'
+  end
 end

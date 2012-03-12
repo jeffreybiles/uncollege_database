@@ -1,6 +1,6 @@
 class Interest < ActiveRecord::Base
-  belongs_to :activity
-  belongs_to :user
+  belongs_to :activity, counter_cache: true
+  belongs_to :user, counter_cache: true
 
   delegate :name, to: :activity
 

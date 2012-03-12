@@ -4,6 +4,7 @@ UncollegeDatabase::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'registrations'}
 
   resources :activities
+  match 'popular', to: 'activities#popular'
 
   resources :interests
 

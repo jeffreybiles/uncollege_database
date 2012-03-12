@@ -7,12 +7,18 @@
   .clear
   =f.submit "Search"
 
+Sort by
+= sort_link @search, :name
+\|
+= link_to "Popularity", '/popular'
+
 %table
   %tr
     %th Name
     %th Interested                
     %th Mentors
     %th Mentees
+    %th
 
   - @activities.each do |activity|
     -if activity.interests.count > 0
